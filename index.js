@@ -19,7 +19,7 @@ const reqFilter=(req,resp,next)=>{
 
 
 app.get('',(req, resp)=>{
-  resp.send("Welcome to Home Page");
+  resp.send("Welcome to bilal page");
 });
 //  Apply middleware on one page just add reqFilter after user
 app.get('/user',reqFilter,(req, resp)=>{
