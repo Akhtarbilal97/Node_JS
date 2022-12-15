@@ -1,19 +1,17 @@
-const express = require("express");
-const  reqFilter = require('./middleware');
+const express = require('express');
+const reqFilter = require('./middleware');
 const app = express();
 
-
-// restriction all page
+// restriction for All Pages
 // app.use(reqFilter);
 
 
-app.get('',(req, resp)=>{
-  resp.send("Welcome to bilal page");
-});
-//  Apply middleware on one page just add reqFilter after user
-app.get('/user',reqFilter,(req, resp)=>{
-   resp.send("Welcome to User Page");
- })
+// restrict for Home page Only
+app.get('/',reqFilter,(req, resp)=>{
+    resp.send('Welcome to Home Page')
+})
 
-
+app.get('/help',(req, resp)=>{
+    resp.send('Welcome to Help Page')
+})
 app.listen(5000);
